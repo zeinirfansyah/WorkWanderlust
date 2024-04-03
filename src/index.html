@@ -7,6 +7,55 @@
     <link href="./css/output.css" rel="stylesheet" />
 </head>
 <body>
-    
+  <header class="sticky top-0 z-10 shadow">
+    <div class="max-w-7xl mx-auto px-5 md:my-0">
+      <nav id="navbar" class="md:flex justify-between items-center py-6">
+        <ul class="flex items-center justify-between">
+          <li>
+            <a id="brand" href="index.html">
+              <h1 class="text-xl font-semibold  transition ease duration-500">
+                <span class="text-blue-400">Work</span>Wanderlust.
+              </h1>
+            </a>
+          </li>
+          <button
+            class="md:hidden hover:bg-white px-3 py-1 transition-all rounded-lg cursor-pointer shadow"
+            onClick="toggleMenu()"
+            type="button"
+          >
+            <span class="text-xl">&#9776;</span>
+          </button>
+        </ul>
+        <ul
+          id="menu"
+          class="hidden md:flex gap-10 transition ease duration-500"
+        >
+          <li class="my-5 md:my-0">
+            <a
+              href=""
+              class="hover:text-blue-400 transition ease duration-500"
+              >Menu</a
+            >
+          </li>
+          <li class="my-5 md:my-0">
+            <a
+              href=""
+              class="hover:text-blue-400 transition ease duration-500"
+              >Menu</a
+            >
+          </li>
+          <li class="my-5 md:my-0">
+            <a
+              href=""
+              class="hover:text-blue-400 transition ease duration-500"
+              >Menu</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <script src="./js/script.js"></script>
 </body>
 </html>
