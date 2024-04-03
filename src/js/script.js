@@ -23,6 +23,13 @@ function updateNavbarStyle() {
   
   updateNavbarStyle();
 
+  // main background parallax effect
+window.addEventListener('scroll', function() {
+    let scroll = window.scrollY;
+    let parallax = document.getElementById('hero');
+    parallax.style.backgroundPositionY = scroll / 1.5 + 'px';
+});
+
   // fetch data
 const fetchData = async () => {
     try {
