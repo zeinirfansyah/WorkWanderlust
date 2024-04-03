@@ -73,7 +73,7 @@ const fetchData = async () => {
     <div class="job p-4 border border-gray-300 rounded-md shadow-sm flex flex-col justify-center items-center bg-slate-400">
     
       <div id="desc">
-        <h1>Judul: ${job.jobTitle}</h1>
+        <h1>${job.jobTitle}</h1>
       </div>
     </div>
     `).join('')

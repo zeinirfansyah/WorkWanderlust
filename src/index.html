@@ -6,7 +6,7 @@
     <title>WorkWanderlust.</title>
     <link href="./css/output.css" rel="stylesheet" />
 </head>
-<body>
+<body class="font-poppins">
   <header class="sticky top-0 z-10 shadow">
     <div class="max-w-7xl mx-auto px-5 md:my-0">
       <nav id="navbar" class="md:flex justify-between items-center py-6">
@@ -73,15 +73,39 @@
                 Ditch the cubicle, embrace flexibility.
               </h2>
             </div>
-            <a href="#section2" class="text-white text-2xl border border-blue-400 hover:bg-blue-400 transition-all duration-500 px-4 py-2">Find Your Job!</a>
+            <a href="#section3" class="text-white text-2xl border border-blue-400 hover:bg-blue-400 transition-all duration-500 px-4 py-2">Find Your Job!</a>
           </div>
         </div>
       </section>
       <section id="section2">
-       
-       <div class="max-w-7xl mx-auto">
-        <div id="job-container" class="flex flex-wrap flex-4">
-          <!-- fetch data di sini -->
+        <div class="max-w-7xl mx-auto px-4 py-7">
+          <div class="flex flex-col md:flex-row gap-6 py-6 px-4 max-h-[48vh] justify-center items-center">
+            <div class="px-6 py-8 shadow">
+              <h1 class="text-2xl font-semibold">Find Your Job</h1>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat, voluptate!</p>
+            </div>
+            <div class="px-6 py-8 shadow">
+              <h1 class="text-2xl font-semibold">Find Your Job</h1>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat, voluptate!</p>
+            </div>
+           
+          </div>
+        </div>
+      </section>
+      <hr class="border border-gray-300 w-1/2 mx-auto my-7">
+      <section id="section3">
+       <div class="max-w-7xl mx-auto px-4 pt-10">
+        <div class="flex flex-col md:flex-row gap-6">
+          <div id="search" class="w-full md:w-1/3">
+            <div class="flex flex-col gap-4 py-6 px-4 shadow max-h-[48vh] justify-center items-center">   
+              <input type="text" placeholder="search..." class="w-full px-5 py-3 rounded-md shadow" />
+              <button class="w-full bg-blue-400 text-white px-5 py-3 rounded-md shadow">Search</button>
+            </div>
+          </div>
+          <div id="job-container" class="flex flex-col w-full md:w-2/3 h-[75vh] overflow-y-auto">
+            <!-- Content goes here -->
+          </div>
+          
         </div>
        </div> 
       </section>
