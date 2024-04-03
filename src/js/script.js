@@ -22,3 +22,38 @@ function updateNavbarStyle() {
   window.addEventListener('scroll', updateNavbarStyle);
   
   updateNavbarStyle();
+
+  // fetch data
+const fetchData = async () => {
+    try {
+      // Display loading message or spinner
+      const jobContainer = document.getElementById("job-container");
+      jobContainer.innerHTML = `
+      <div class="h-screen flex justify-center items-center">
+        <img src="./assets/loading.gif" />
+      </div>`;
+  
+      const response = await fetch("https://jobicy.com/api/v2/remote-jobs");
+      const {jobs} = await response.json();
+  
+      // Hide loading message or spinner and display the data
+      displayJob(jobs);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+  
+  const displayJob = (jobList) => {
+    const jobContainer = document.getElementById("job-container");
+  
+    jobContainer.innerHTML = jobList.map(job => `
+    <div class="job p-4 border border-gray-300 rounded-md shadow-sm flex flex-col justify-center items-center bg-slate-400">
+    
+      <div id="desc">
+        <h1>Judul: ${job.jobTitle}</h1>
+      </div>
+    </div>
+    `).join('')
+  }
+  
+  fetchData();
