@@ -30,6 +30,22 @@ window.addEventListener('scroll', function() {
     parallax.style.backgroundPositionY = scroll / 1.5 + 'px';
 });
 
+// Smooth scroll behavior when clicking on link id
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+  
+      const targetElement = document.querySelector(this.getAttribute('href'));
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+  
+
   // fetch data
 const fetchData = async () => {
     try {
