@@ -80,13 +80,14 @@
       <section id="section2">
         <div class="max-w-7xl mx-auto px-4 py-7">
           <div class="flex flex-col md:flex-row gap-6 py-6 px-4 max-h-[48vh] justify-center items-center">
-            <div class="px-6 py-8 shadow">
-              <h1 class="text-2xl font-semibold">Find Your Job</h1>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat, voluptate!</p>
+            <div class="flex flex-col gap-2 px-6 py-8 shadow">
+              <h1 class="text-xl font-semibold">WorkWanderlust.</h1>
+              <p class="text-sm">WorkWanderlust is a platform where you can find your next job. This platform supported by <a href="https://jobicy.com/jobs-rss-feed" target="_blank" class="text-blue-400">Jobicy.com</a> API.</p>
+              <p class="text-sm">WorkWanderlust made by Zein Irfansyah as a bootcamp project from Harisenin.com</p>
             </div>
             <div class="px-6 py-8 shadow">
-              <h1 class="text-2xl font-semibold">Find Your Job</h1>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellat, voluptate!</p>
+              <h1 class="text-xl font-semibold">About Jobicy API</h1>
+              <p class="text-sm">Since its inception in 2019, Jobicy has been on a mission to accelerate hiring process and simplify life for companies and people around the world. Jobicy is helping companies of all sizes power their business with remote talents.</p>
             </div>
            
           </div>
@@ -97,13 +98,20 @@
        <div class="max-w-7xl mx-auto px-4 pt-10">
         <div class="flex flex-col md:flex-row gap-6">
           <div id="search" class="w-full md:w-1/3">
-            <div class="flex flex-col gap-4 py-6 px-4 shadow max-h-[48vh] justify-center items-center">   
-              <input type="text" placeholder="search..." class="w-full px-5 py-3 rounded-md shadow" />
+            <div class="flex flex-col gap-4 py-6 px-4 shadow max-h-[48vh] justify-center items-center">  
+              <h1 class="text-2xl font-semibold">Find Your Job</h1>
+               <!--filter  -->
+              <select id="filter-container" class="w-full px-5 py-3 rounded-md shadow">
+               <!-- filter data fetched here -->
+              </select>
+
+              <input id="search-input" type="text" placeholder="Cari pekerjaan" class="w-full px-5 py-3 rounded-md shadow" />
+
               <button class="w-full bg-blue-400 text-white px-5 py-3 rounded-md shadow">Search</button>
             </div>
           </div>
-          <div id="job-container" class="flex flex-col w-full md:w-2/3 h-[75vh] overflow-y-auto">
-            <!-- Content goes here -->
+          <div id="job-container" class="flex flex-col gap-5 w-full md:w-2/3 h-[75vh] overflow-y-auto px-4">
+           <!-- content fetched here -->
           </div>
           
         </div>
