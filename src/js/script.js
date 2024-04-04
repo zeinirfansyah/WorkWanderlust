@@ -76,7 +76,7 @@ const displayJob = (jobList) => {
     .map(
       (job) => `
       <div class="job p-4 border border-gray-300 rounded-md shadow-sm flex flex-col justify-center items-center ${likedJobs.includes(job.id) ? 'bg-blue-100 border-blue-500' : ''}">
-      <div id="desc" class="flex flex-row gap-3 items-center">
+      <div id="desc" class="flex flex-row gap-5 items-center">
           <img
           src="${job.companyLogo}"
           alt="${job.companyName}"
