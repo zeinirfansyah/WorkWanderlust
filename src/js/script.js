@@ -84,7 +84,7 @@ const displayJob = (jobList) => {
           />
         <div class="">
           <div class="flex flex-row justify-between items-center gap-2">
-           <a href="${job.url}" target="_blank" class="text-xl font-bold">${job.jobTitle}</a>
+           <a href="${job.url}" target="_blank" class="text-xl font-bold"><p class="hover:text-blue-400 transition-all duration-500">${job.jobTitle}</p></a>
             <button class="like-btn px-4 py-2 border" onclick="saveLikedJob('${job.id}', this)">${likedJobs.includes(job.id) ? 'Liked' : 'Like'}</button>
           </div>
           <h2 class="xl">${job.companyName}</h2>
@@ -170,3 +170,45 @@ const saveLikedJob = (jobId, button) => {
 
 
 
+// Function to update the countdown timer (math implementation)
+function updateCountdown() {
+  const now = new Date();
+  const targetDate = new Date('2025-01-01T00:00:00');
+
+  const timeDifference = targetDate - now;
+
+  const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+  const countdownDiv = document.getElementById('countdown');
+  countdownDiv.innerHTML = `<p class="text-center"> Countdown to 2025:<br>${days} days ${hours} hours ${minutes} minutes ${seconds} seconds </p>`;
+}
+
+// Function to display the date and time in WIB timezone (date implementation)
+function updateClock() {
+  const now = new Date();
+  const jakartaTime = now.toLocaleString('en-US', {
+    timeZone: 'Asia/Jakarta',
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
+    hour12: true
+  });
+  const jakartaDate = now.toLocaleDateString('en-US', {
+    timeZone: 'Asia/Jakarta',
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+  const clockDiv = document.getElementById('clock');
+  clockDiv.textContent = `${jakartaDate} - ${jakartaTime}`;
+}
+
+// Update the countdown and clock immediately and start the intervals
+updateCountdown();
+updateClock();
+setInterval(updateCountdown, 1000);
+setInterval(updateClock, 1000);
