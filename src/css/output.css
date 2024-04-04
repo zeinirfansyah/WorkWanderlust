@@ -628,6 +628,22 @@ video {
   height: 80px;
 }
 
+.h-\[20vh\]{
+  height: 20vh;
+}
+
+.h-\[12vh\]{
+  height: 12vh;
+}
+
+.h-\[16vh\]{
+  height: 16vh;
+}
+
+.h-\[10vh\]{
+  height: 10vh;
+}
+
 .max-h-\[48vh\]{
   max-height: 48vh;
 }
