@@ -556,6 +556,40 @@ video {
   --tw-contain-style:  ;
 }
 
+.container{
+  width: 100%;
+}
+
+@media (min-width: 640px){
+  .container{
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px){
+  .container{
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px){
+  .container{
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px){
+  .container{
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px){
+  .container{
+    max-width: 1536px;
+  }
+}
+
 .sticky{
   position: sticky;
 }
@@ -622,6 +656,22 @@ video {
 
 .max-h-\[48vh\]{
   max-height: 48vh;
+}
+
+.min-h-\[48vh\]{
+  min-height: 48vh;
+}
+
+.min-h-\[10vh\]{
+  min-height: 10vh;
+}
+
+.min-h-\[16vh\]{
+  min-height: 16vh;
+}
+
+.min-h-\[20vh\]{
+  min-height: 20vh;
 }
 
 .w-1\/2{
@@ -953,6 +1003,10 @@ video {
 
   .md\:w-2\/3{
     width: 66.666667%;
+  }
+
+  .md\:w-1\/2{
+    width: 50%;
   }
 
   .md\:flex-row{

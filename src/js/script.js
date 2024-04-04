@@ -127,24 +127,28 @@ const displayFilter = (filter) => {
   });
 }
 
+
+fetchData();
+
+
 const searchJobs = () => {
   const searchInput = document.getElementById("search-input");
   const searchTerm = searchInput.value.toLowerCase();
-  const jobTitles = document.querySelectorAll("#job-container a h1");
+  const jobTitles = document.querySelectorAll("#job-container .job a"); // Select all job titles
 
   jobTitles.forEach(title => {
-    const jobTitle = title.textContent.toLowerCase();
-    const jobContainer = title.parentElement.parentElement.parentElement;
+    const jobTitle = title.querySelector('p').textContent.toLowerCase(); // Select the nested p element
+    const jobContainer = title.parentElement.parentElement.parentElement; // Get the parent container of the title
 
     if (jobTitle.includes(searchTerm)) {
-      jobContainer.style.display = "block";
+      jobContainer.style.display = "flex"; // Display the job container
     } else {
-      jobContainer.style.display = "none";
+      jobContainer.style.display = "none"; // Hide the job container
     }
   });
 }
 
-fetchData();
+
 
 // Add event listener for search input
 const searchInput = document.getElementById("search-input");
@@ -154,15 +158,11 @@ searchInput.addEventListener("input", searchJobs);
 const saveLikedJob = (jobId, button) => {
   let likedJobs = JSON.parse(localStorage.getItem('likedJobs')) || [];
 
-  // Check if the job is already saved as liked
   if (!likedJobs.includes(jobId)) {
-    // If not, add the job ID to the list of liked jobs
     likedJobs.push(jobId);
 
-    // Update the local storage with the new list of liked jobs
     localStorage.setItem('likedJobs', JSON.stringify(likedJobs));
 
-    // Change the button text to "Liked"
     button.textContent = 'Liked';
     button.style.color = '#0070f3';
   }
